@@ -1,28 +1,31 @@
-import Header from "./components/Header.jsx";
-import About from "./components/About.jsx";
-import Skills from "./components/Skills.jsx";
-import Footer from "./components/Footer.jsx";
-import "./index.css";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
+import Home from "./pages/Home";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 function App() {
-  const studentName = "Yug Patel";
-  const role = "Computer Engineering Student";
-
-  const about =
-    "I am a Computer Engineering student passionate about AI, Machine Learning, Data Science, and Web Development.";
-
-  const skills = ["Python", "Data Science", "JavaScript", "MySQL"];
-
   return (
-    <div className="container">
-      <Header name={studentName} role={role} themeColor="#2563eb" />
+    <>
+      <NavBar />
 
-      <About aboutText={about} />
+      <main>
+        <section id="home">
+          <Home />
+        </section>
 
-      <Skills skillList={skills} />
+        <section id="projects">
+          <Projects />
+        </section>
 
-      <Footer email="yugpatel9093@gmail.com" contact={studentName} />
-    </div>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+
+      <Footer contact="yugpa" email="yugpa@example.com" />
+    </>
   );
 }
 
