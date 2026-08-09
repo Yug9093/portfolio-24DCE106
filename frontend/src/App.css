@@ -110,10 +110,37 @@ main {
 }
 
 .nav-links a:hover,
-.nav-links a:focus-visible {
+.nav-links a:focus-visible,
+.nav-links a.active {
   color: var(--primary-strong);
   background: var(--primary-soft);
+  font-weight: 600;
   transform: translateY(-1px);
+}
+
+.section-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.tab-btn {
+  padding: 8px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.tab-btn.is-active,
+.tab-btn:hover {
+  background: #ffffff;
+  color: var(--primary-strong);
+  border-color: #ffffff;
 }
 
 .home-header,
@@ -148,7 +175,6 @@ main {
   font-size: 1.02rem;
 }
 
-.toggle-btn,
 .submit-btn {
   border: none;
   border-radius: 999px;
@@ -156,17 +182,7 @@ main {
   transition: transform 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
-.toggle-btn {
-  margin-top: 24px;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-}
-
-.toggle-btn:hover,
 .submit-btn:hover,
-.toggle-btn:focus-visible,
 .submit-btn:focus-visible {
   transform: translateY(-2px);
 }
@@ -239,7 +255,7 @@ main {
 
 .contact-form {
   display: grid;
-  gap: 12px;
+  gap: 14px;
   padding: 28px;
   max-width: 620px;
 }
@@ -249,7 +265,8 @@ main {
   color: var(--text);
 }
 
-.contact-form input {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 14px 16px;
   border-radius: var(--radius-md);
@@ -259,16 +276,19 @@ main {
   transition: border-color 160ms ease, box-shadow 160ms ease, background-color 160ms ease;
 }
 
-.contact-form input::placeholder {
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
   color: #94a3b8;
 }
 
-.contact-form input:focus {
+.contact-form input:focus,
+.contact-form textarea:focus {
   outline: none;
   border-color: rgba(15, 118, 110, 0.45);
   box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
   background: #ffffff;
 }
+
 
 .submit-btn {
   justify-self: start;
@@ -282,6 +302,16 @@ main {
 .submit-btn:hover,
 .submit-btn:focus-visible {
   background: var(--primary-strong);
+}
+
+.submission-success {
+  margin-top: 10px;
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(16, 185, 129, 0.12);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #065f46;
+  font-weight: 500;
 }
 
 .footer {

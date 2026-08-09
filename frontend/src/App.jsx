@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 
@@ -7,25 +8,19 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <NavBar />
 
       <main>
-        <section id="home">
-          <Home />
-        </section>
-
-        <section id="projects">
-          <Projects />
-        </section>
-
-        <section id="contact">
-          <Contact />
-        </section>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
       </main>
 
-      <Footer contact="yugpa" email="yugpa@example.com" />
-    </>
+      <Footer contact="Yug Patel" email="yugpatel9093@example.com" />
+    </BrowserRouter>
   );
 }
 
