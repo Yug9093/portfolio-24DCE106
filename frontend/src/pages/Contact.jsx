@@ -29,10 +29,6 @@ function Contact() {
           placeholder="Enter your name"
         />
 
-        <p>
-          You entered: <strong>{name}</strong>
-        </p>
-
         <label htmlFor="email-input">Email</label>
         <input
           id="email-input"

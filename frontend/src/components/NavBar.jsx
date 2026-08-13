@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-function NavBar() {
+function NavBar({ theme, toggleTheme }) {
   return (
     <nav className="navbar">
       <h2>My Portfolio</h2>
@@ -24,6 +24,15 @@ function NavBar() {
         >
           Contact
         </NavLink>
+
+        <button
+          type="button"
+          className="nav-link theme-toggle-btn"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+        >
+          {theme === "dark" ? "☀️ Light" : "🌙 Dark"}
+        </button>
       </div>
     </nav>
   );
